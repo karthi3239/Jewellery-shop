@@ -1,0 +1,41 @@
+<section>
+
+  <div class="container mt-4">
+    <div class="row" style="margin-top:80px;">
+      <div class="col-md-6 grid-margin stretch-card">
+        <h2 class="text-center">Add Product</h2>
+        <form action="/admin/apply-offer"  method="post">
+
+
+          <label for="">Offers</label>
+          <select class="form-select" name="offername" aria-label="Default select example">
+            {{!-- <option selected>select from the option</option> --}}
+            {{#each offer}}
+            <option value="{{this.offername}}">{{this.offername}}</option>
+            {{/each}}
+            {{!-- <option value="2">Earrings</option>
+            <option value="3">Neckpiece</option> --}}
+          </select>
+          <br>
+          <label for="">Name</label>
+          <input type="text" name="Name" class="form-control" value="{{product.Name}}" style="width:auto">
+
+         
+
+          <label for="">Price</label>
+          <input type="text" name="Price" class="form-control" value="{{product.Price}}">
+
+         
+
+
+          <button type="submit" class="btn btn-success mt-4">Submit</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+
+</section>
+
+

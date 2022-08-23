@@ -1,0 +1,549 @@
+{{!-- <div class="receipt-content">
+  <div class="container bootstrap snippets bootdey">
+    <div class="row">
+      {{#each order}}
+      <div class="col-md-12">
+        <div class="invoice-wrapper">
+          <div class="intro">
+            Hi <strong>{{this.deliveryDetails.name}}</strong>,
+            <br>
+            This is the receipt for a payment of <strong>Rs.{{this.totalAmount}}</strong> (INR) for your purchase
+          </div>
+
+          <div class="payment-info">
+            <div class="row">
+              <div class="col-sm-6">
+                <span>PaymentMethod.</span>
+                <strong>{{this.paymentMethod}}</strong>
+              </div>
+              <div class="col-sm-6 text-right">
+                <span>Payment Date</span>
+                <strong>{{this.date}}</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="payment-details">
+            <div class="row">
+              <div class="col-sm-6">
+                <span>Customer Details</span>
+                <strong>
+                  {{this.deliveryDetails.name}}
+                </strong>
+                <p>
+                  {{this.deliveryDetails.address}} <br>
+                  {{this.deliveryDetails.state}} <br>
+                  {{this.deliveryDetails.mobile}} <br>
+                  <br>
+                  <a href="#">
+                    {{User.Email}}
+                  </a>
+                </p>
+              </div>
+              <div class="col-sm-6 text-right">
+                <span>Payment To</span>
+                <strong>
+                  E-Stylish
+                </strong>
+                <p>
+                  9th Avenue <br>
+                  San Francisco <br>
+                  99383 <br>
+                  USA <br>
+
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="line-items">
+            <div class="headers clearfix">
+              <div class="row">
+                <div class="col-xs-4">Description</div>
+
+                <div class="col-xs-3">Quantity</div>
+                <div class="col-xs-5 text-right">Amount</div>
+              </div>
+            </div>
+            <div class="items">
+              <div class="row item">
+                --}}
+                {{!-- <div>
+                  <img class="img-fluid w-40 h-20" style="width:65px"
+                    src="/product-images/{{../products.[0].product.Image.[0]}}" alt="">
+                </div> --}}
+
+                {{!-- <div class="col-xs-4 desc">
+                  {{../products.[0].product.Name}}
+                </div>
+                <br>
+                <div class="col-xs-3 qty">
+                  {{this.quantity}}
+                </div>
+
+                <div class="col-xs-5 amount text-right">
+                  {{../products.[0].product.Price}}
+                </div>
+
+              </div>
+              <div class="row item">
+                <div class="col-xs-4 desc">
+                  Bootstrap snippet
+                </div>
+                <div class="col-xs-3 qty">
+                  1
+                </div>
+                <div class="col-xs-5 amount text-right">
+                  $20.00
+                </div>
+              </div>
+              <div class="row item">
+                <div class="col-xs-4 desc">
+                  Snippets on bootdey
+                </div>
+                <div class="col-xs-3 qty">
+                  2
+                </div>
+                <div class="col-xs-5 amount text-right">
+                  $18.00
+                </div>
+              </div>
+            </div>
+            <div class="total text-right">
+              <p class="extra-notes">
+                <strong>Extra Notes</strong>
+                Please send all items at the same time to shipping address by next week.
+                Thanks a lot.
+              </p>
+              <div class="field">
+                Subtotal <span>$379.00</span>
+              </div>
+              <div class="field">
+                Shipping <span>$0.00</span>
+              </div>
+              <div class="field">
+                Discount <span>4.5%</span>
+              </div>
+              <div class="field grand-total">
+                Total <span>$312.00</span>
+              </div>
+            </div>
+
+            <div class="print">
+              <a href="#">
+                <i class="fa fa-print"></i>
+                Print this receipt
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer">
+          Copyright © 2014. company name
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</div>
+
+
+<style>
+  .receipt-content .logo a:hover {
+    text-decoration: none;
+    color: #7793C4;
+  }
+
+  .receipt-content .invoice-wrapper {
+    background: #FFF;
+    border: 1px solid #CDD3E2;
+    box-shadow: 0px 0px 1px #CCC;
+    padding: 40px 40px 60px;
+    margin-top: 40px;
+    border-radius: 4px;
+  }
+
+  .receipt-content .invoice-wrapper .payment-details span {
+    color: #A9B0BB;
+    display: block;
+  }
+
+  .receipt-content .invoice-wrapper .payment-details a {
+    display: inline-block;
+    margin-top: 5px;
+  }
+
+  .receipt-content .invoice-wrapper .line-items .print a {
+    display: inline-block;
+    border: 1px solid #9CB5D6;
+    padding: 13px 13px;
+    border-radius: 5px;
+    color: #708DC0;
+    font-size: 13px;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -ms-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+  }
+
+  .receipt-content .invoice-wrapper .line-items .print a:hover {
+    text-decoration: none;
+    border-color: #333;
+    color: #333;
+  }
+
+  .receipt-content {
+    background: #ECEEF4;
+  }
+
+  @media (min-width: 1200px) {
+    .receipt-content .container {
+      width: 900px;
+    }
+  }
+
+  .receipt-content .logo {
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  .receipt-content .logo a {
+    font-family: Myriad Pro, Lato, Helvetica Neue, Arial;
+    font-size: 36px;
+    letter-spacing: .1px;
+    color: #555;
+    font-weight: 300;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -ms-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+  }
+
+  .receipt-content .invoice-wrapper .intro {
+    line-height: 25px;
+    color: #444;
+  }
+
+  .receipt-content .invoice-wrapper .payment-info {
+    margin-top: 25px;
+    padding-top: 15px;
+  }
+
+  .receipt-content .invoice-wrapper .payment-info span {
+    color: #A9B0BB;
+  }
+
+  .receipt-content .invoice-wrapper .payment-info strong {
+    display: block;
+    color: #444;
+    margin-top: 3px;
+  }
+
+  @media (max-width: 767px) {
+    .receipt-content .invoice-wrapper .payment-info .text-right {
+      text-align: left;
+      margin-top: 20px;
+    }
+  }
+
+  .receipt-content .invoice-wrapper .payment-details {
+    border-top: 2px solid #EBECEE;
+    margin-top: 30px;
+    padding-top: 20px;
+    line-height: 22px;
+  }
+
+
+  @media (max-width: 767px) {
+    .receipt-content .invoice-wrapper .payment-details .text-right {
+      text-align: left;
+      margin-top: 20px;
+    }
+  }
+
+  .receipt-content .invoice-wrapper .line-items {
+    margin-top: 40px;
+  }
+
+  .receipt-content .invoice-wrapper .line-items .headers {
+    color: #A9B0BB;
+    font-size: 13px;
+    letter-spacing: .3px;
+    border-bottom: 2px solid #EBECEE;
+    padding-bottom: 4px;
+  }
+
+  .receipt-content .invoice-wrapper .line-items .items {
+    margin-top: 8px;
+    border-bottom: 2px solid #EBECEE;
+    padding-bottom: 8px;
+  }
+
+  .receipt-content .invoice-wrapper .line-items .items .item {
+    padding: 10px 0;
+    color: #696969;
+    font-size: 15px;
+  }
+
+  @media (max-width: 767px) {
+    .receipt-content .invoice-wrapper .line-items .items .item {
+      font-size: 13px;
+    }
+  }
+
+  .receipt-content .invoice-wrapper .line-items .items .item .amount {
+    letter-spacing: 0.1px;
+    color: #84868A;
+    font-size: 16px;
+  }
+
+  @media (max-width: 767px) {
+    .receipt-content .invoice-wrapper .line-items .items .item .amount {
+      font-size: 13px;
+    }
+  }
+
+  .receipt-content .invoice-wrapper .line-items .total {
+    margin-top: 30px;
+  }
+
+  .receipt-content .invoice-wrapper .line-items .total .extra-notes {
+    float: left;
+    width: 40%;
+    text-align: left;
+    font-size: 13px;
+    color: #7A7A7A;
+    line-height: 20px;
+  }
+
+  @media (max-width: 767px) {
+    .receipt-content .invoice-wrapper .line-items .total .extra-notes {
+      width: 100%;
+      margin-bottom: 30px;
+      float: none;
+    }
+  }
+
+  .receipt-content .invoice-wrapper .line-items .total .extra-notes strong {
+    display: block;
+    margin-bottom: 5px;
+    color: #454545;
+  }
+
+  .receipt-content .invoice-wrapper .line-items .total .field {
+    margin-bottom: 7px;
+    font-size: 14px;
+    color: #555;
+  }
+
+  .receipt-content .invoice-wrapper .line-items .total .field.grand-total {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .receipt-content .invoice-wrapper .line-items .total .field.grand-total span {
+    color: #20A720;
+    font-size: 16px;
+  }
+
+  .receipt-content .invoice-wrapper .line-items .total .field span {
+    display: inline-block;
+    margin-left: 20px;
+    min-width: 85px;
+    color: #84868A;
+    font-size: 15px;
+  }
+
+  .receipt-content .invoice-wrapper .line-items .print {
+    margin-top: 50px;
+    text-align: center;
+  }
+
+
+
+  .receipt-content .invoice-wrapper .line-items .print a i {
+    margin-right: 3px;
+    font-size: 14px;
+  }
+
+  .receipt-content .footer {
+    margin-top: 40px;
+    margin-bottom: 110px;
+    text-align: center;
+    font-size: 12px;
+    color: #969CAD;
+  }
+</style> --}}
+
+
+<div class="card">
+  <div class="card-body">
+    <div class="container mb-5 mt-3">
+      <div class="row d-flex align-items-baseline">
+        {{!-- <div class="col-xl-9">
+          <p style="color: #7e8d9f;font-size: 20px;">Invoice >> <strong>ID: #123-123</strong></p>
+        </div> --}}
+        <div class="col-xl-3 float-end">
+          <a class="btn btn-light text-capitalize border-0" data-mdb-ripple-color="dark"><i
+              class="fas fa-print text-primary"></i> Print</a>
+          <a class="btn btn-light text-capitalize" data-mdb-ripple-color="dark"><i
+              class="far fa-file-pdf text-danger"></i> Export</a>
+        </div>
+        <hr>
+      </div>
+
+      <div class="container">
+        <div class="col-md-12">
+          <div class="text-center">
+            <i class="fab fa-mdb fa-4x ms-0" style="color:#5d9fc5 ;"></i>
+            <p class="font-weight-bold pt-0" style="font-size:30px">E-stylish</p>
+          </div>
+
+        </div>
+
+
+        <div class="row">
+
+          <div class="col-xl-8">
+            <ul class="list-unstyled">
+              <li class="text-muted">To: <span style="color:#5d9fc5 ;">{{order.[0].address.addressdetails.name}}</span></li>
+              <li class="text-muted">Address : {{order.[0].address.addressdetails.address}}</li>
+              <li class="text-muted">Pincode : {{order.[0].address.addressdetails.pincode}}</li>
+              <li class="text-muted"><i class="fas fa-phone"></i>Mobile :  {{order.[0].address.addressdetails.mobile}}</li>
+            </ul>
+          </div>
+          <div class="col-xl-4">
+
+            <p class="text-muted">Invoice</p>
+            <ul class="list-unstyled">
+              <li class="text-muted"><i class="fas fa-circle" style="color:#84B0CA ;"></i> <span
+                  class="fw-bold">ID:</span>{{order.[0]._id}}</li>
+              <li class="text-muted"><i class="fas fa-circle" style="color:#84B0CA ;"></i> <span
+                  class="fw-bold">Creation Date: </span>{{order.[0].date}}</li>
+              <li class="text-muted"><i class="fas fa-circle" style="color:#84B0CA ;"></i> <span class="fw-bold">Payment
+                  Method: </span>{{order.[0].paymentMethod}}</li>
+              <li class="text-muted"><i class="fas fa-circle" style="color:#84B0CA ;"></i> <span
+                  class="me-1 fw-bold">Status:</span><span class="badge bg-warning text-black fw-bold">
+                  {{order.[0].status}}</span></li>
+            </ul>
+
+          </div>
+
+        </div>
+        <div>
+
+          <div class="row my-2 mx-1 justify-content-center">
+            <table class="table table-striped table-borderless">
+              <thead style="background-color:#84B0CA ;" class="text-white">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Description</th>
+                  <th scope="col">Qty</th>
+                  {{!-- <th scope="col">OfferPercent</th> --}}
+                  <th scope="col">Price</th>
+                  {{!-- <th scope="col">Amount</th> --}}
+                </tr>
+              </thead>
+              <tbody>
+                {{#each products}}
+                <tr>
+                  <th scope="row">{{inc @index}}</th>
+                  <td><img src="/product-images/{{this.product.Image.[0]}}" alt=""
+                                    style="width: 50px;">{{product.Name}}</td>
+                 
+                  <td>{{this.quantity}}</td>
+                  {{!-- <td>{{product.offerpercent}}</td> --}}
+                  <td>{{product.Price}}</td>
+                  {{!-- <td>$800</td> --}}
+                </tr>
+                {{!-- <tr>
+                  <th scope="row">2</th>
+                  <td>Web hosting</td>
+                  <td>1</td>
+                  <td>$10</td>
+                  <td>$10</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>Consulting</td>
+                  <td>1 year</td>
+                  <td>$300</td>
+                  <td>$300</td>
+                </tr> --}}
+
+              </tbody>
+
+              {{/each}}
+            </table>
+          </div>
+
+          <div class="row">
+            <div class="col-xl-8">
+
+             
+            </div>
+            <div class="col-xl-3">
+              <ul class="list-unstyled">
+                {{#if offerpercent}}
+                <li class="text-bold ms-3 "><span class="text-black me-4">OfferPercent</span>{{product.offerpercent}}
+                </li>
+                {{else}}
+                 {{!-- <li class="text-bold ms-3 "><span class="text-black me-4">OfferPercent :</span>0
+                </li> --}}
+                {{/if}}
+                {{!-- <li class="text-muted ms-3 mt-2"><span class="text-black me-4">Tax(15%)</span>$111</li> --}}
+              </ul>
+
+            </div>
+          </div>
+
+        </div>
+        <hr>
+        <div>
+          {{#if order.[0].coupon}}
+          <p class="text-black float-right font-weight-bold mb-0">coupon : Appiled</p>
+          <br>
+          <p class="text-black float-right font-weight-bold mb-0">Coupon Offer Price : {{this.order.[0].coupon}}</p>
+          <br>
+          {{!-- <p class="text-black float-right font-weight-bold">Total : {{order.[0].total}}</p> --}}
+          {{else}}
+
+          {{/if}}
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+          {{#if order.[0].totalAmount.walletAmount}}
+          <p class="text-black float-right font-weight-bold mb-0">Amount Paid from Wallet : {{order.[0].totalAmount.walletAmount}}</p>
+          <br>
+          <br>
+          <p class="text-black float-right font-weight-bold mb-0">Online : {{order.[0].totalAmount.totalAmount}}</p>
+           <br>
+          <br>
+          <p class="text-black float-right font-weight-bold mb-0">Grand Total : {{order.[0].total}}</p>
+
+          {{else}}
+
+
+
+          <p class="text-black float-right font-weight-bold"><span class="text-black me-3">Grand Total Amount : </span><span
+              style="font-size: 25px; margin-left:20px;">{{totals}}</span></p>
+          {{/if}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xl-10">
+            <p>Thank you for your purchase</p>
+          </div>
+          {{!-- <div class="col-xl-2">
+            <button type="button" class="btn btn-primary text-capitalize" style="background-color:#60bdf3 ;">Pay
+              Now</button>
+          </div> --}}
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

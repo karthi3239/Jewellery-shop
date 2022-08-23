@@ -1,0 +1,100 @@
+{{!-- <section>
+<div class="container"style="margin-top:90px;">
+<div class="row mt-4">
+   
+<table class="table" style="margin-top:65px" id="cattable">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Mobile Number</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+     {{#each users}} 
+    <tr>
+      <th scope="row">1</th>
+      <td>{{this.Name}}</td>
+      <td>{{this.Email}}</td>
+      <td>{{this.Number}}</td>
+      <td>
+        {{#if status}}
+        <a href="/admin/block-user/{{this._id}}" class="btn btn-danger">BLOCK</a>
+        {{else}}
+         <a href="/admin/unblock-user/{{this._id}}" class="btn btn-primary">UNBLOCK</a> 
+         {{/if}}
+      </td>
+    </tr>
+    {{/each}} 
+  </tbody>
+</table>
+
+ </div>
+</section> --}}
+
+   
+
+<div class="main-panel">
+          <div class="content-wrapper">
+            <div class="page-header">
+              <h3 class="page-title"> All Users </h3>
+              {{!-- <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="#">Tables</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Basic tables</li>
+                </ol>
+              </nav> --}}
+            </div>
+            <div class="row">
+              <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    {{!-- <h4 class="card-title">Basic Table</h4> --}}
+                    {{!-- <p class="card-description"> Add class <code>.table</code> --}}
+                    </p>
+                    <div class="table-responsive">
+                      <table class="table" id="cattable">
+                        <thead>
+                          <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Mobile</th>
+                            <th>Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {{#each users}} 
+                          <tr>
+                           <th scope="row">{{inc @index}}</th>
+                           <td>{{this.Name}}</td>
+                           <td>{{this.Email}}</td>
+                           <td>{{this.Number}}</td>
+                            {{!-- <td><label class="badge badge-danger">Pending</label></td> --}}
+                             <td>
+        {{#if status}}
+        <a href="/admin/block-user/{{this._id}}" class="badge badge-danger">BLOCK</a>
+        {{else}}
+         <a href="/admin/unblock-user/{{this._id}}" class="badge badge-danger">UNBLOCK</a> 
+         {{/if}}
+      </td>
+                          </tr>
+                          {{/each}}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
+<script>
+  $(document).ready( function () {
+    $('#cattable').DataTable();
+} );
+</script>

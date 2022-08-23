@@ -1,0 +1,82 @@
+<section>
+    <div class="container m-5">
+        <div style="width: 500px;" class="m-5">
+            <form action="/admin/banner" method="post" enctype="multipart/form-data">
+            {{#if imgErr}}
+            <span>{{imgErr}}</span><br>
+            {{else}}
+            {{/if}}
+                <label for="">Image</label>
+                <input type="file" name="image" class="form-control">
+                <button type="submit" class="btn btn-success">Add</button>
+            </form>
+        </div>
+    </div>
+    <hr>
+</section>
+
+{{!-- <section>
+
+    <div class="container d-flex-row ps-5 justify-content-center">
+        {{#each banner}}
+        <div class="img mt-5 ms-5 img-row">
+
+            <img src="/product-images/{{this.name}}" alt="" style="width:600px ; height: 200px;">
+        </div>
+
+        <div>
+            <button class="btn btn-danger mt-2 ms-5" type="button" onclick=" funtion('{{this._id}}')"> delete</button>
+        </div>
+        <hr>
+        {{/each}}
+
+
+    </div>
+</section> --}}
+<style>
+    .img-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 700px;
+        height: 240px;
+        border-radius: 22px;
+        background: #ffffff;
+        box-shadow: 5px -5px 10px #6e6e6e,
+            -5px 5px 10px #ffffff;
+    }
+</style>
+
+<script>
+    function funtion(id) {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    url: '/admin/bannerdelete',
+                    data: {
+                        id: id
+                    },
+                    method: "post",
+                    success: (response) => {
+                        if (response.status) {
+                            location.reload()
+                        }
+                    }
+                })
+                Swal.fire(
+                    'Deleted!',
+                    'Your file has been deleted.',
+                    'success'
+                )
+            }
+        })
+    }
+</script>

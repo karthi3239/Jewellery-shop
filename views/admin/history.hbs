@@ -1,0 +1,40 @@
+<section>
+  <div class="container" style="margin-top:65px">
+    <table class="table" style="margin-top:65px" id="table_id">
+      <thead>
+        <tr>
+          <th scope="col">No</th>
+          <th scope="col">User Name</th>
+          {{!-- <th scope="col">Description</th>
+          <th scope="col">Price</th> --}}
+          <th scope="col">Used Coupon</th>
+          
+         
+        </tr>
+      </thead>
+      <tbody>
+        {{#each History}}
+        <tr>
+          <th scope="row">{{inc @index}}</th>
+          <td>{{this.history.Name}}</td>
+          <td>{{this.history.coupon}}</td>
+         
+         
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+{{!--
+<script>
+  $(document).ready(function () {
+    $('#table_id').DataTable();
+  });
+</script> --}}
+
+
+
+
+

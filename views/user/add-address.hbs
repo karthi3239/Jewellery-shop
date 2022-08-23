@@ -1,0 +1,129 @@
+<section class="d-flex justify-content-center">
+    <div class="container  m-5 d-flex justify-content-center" style="background-color:rgb(222, 172, 169) ; width: 700px;height: auto;border-radius: 25px;box-shadow: 100px;">
+        <div class="row">
+
+            <div class=" col-md-12">
+                <h2 class="text-center">
+                    Add Address
+                </h2>
+               
+                <form action="/add-address" method="post" style="width: 500px;">
+                    <input type="text" name="userId" id="" value="{{User._id}}" hidden>
+                    <label for="">Name</label>
+                    <p class="text-danger" id="nameerr"></p>
+                    <input type="text" id="name" name="name" onkeyup="validateName()" class="form-control">
+                    <label for="">Mobile</label>
+                   
+                    <input type="text" name="mobile" id="mobile" onkeyup="validateNumber()" class="form-control" >
+                     <p class="text-danger" id="mobileerr"></p>
+                    <label for="">Address</label>
+                   
+                    <input type="text" name="address" id="address" onkeyup="validateAddress()" class="form-control">
+                     <p class="text-danger" id="addresserr"></p>
+                    <label for="">State</label>
+                   
+                    <input type="state" name="state" id="state" class="form-control">
+                     <p class="text-danger" id="stateerr"></p>
+                    <label for="">Pin Code</label>
+                    <input type="text" name="pincode" id="pincode" onkeyup="validatePincode()" class="form-control">
+                     <p class="text-danger" id="pincodeerr"></p>
+
+                    
+
+                   
+                    
+
+                    
+
+                    <button type="submit" class="btn btn-success my-4">Submit</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+     .btn-success{
+                background-color:  #D19C97;
+                border-color:  #D19C97;
+            }
+</style>
+
+
+     <script>
+    var errorName = document.getElementById('nameerror')
+    var errorEmail = document.getElementById('emailerr')
+    var errorAddress = document.getElementById('addresserr')
+    var errorNumber = document.getElementById('mobileerr')
+    var errorpincode= document.getElementById('pincodeerror')
+    function validateName() {
+		
+        const name = document.getElementById('name').value;
+        if (name == "") {
+            errorName.innerHTML = 'Enter your Name'
+            return false
+        }  
+        if (!name.match(/^[a-zA-Z]*$/)) {
+            errorName.innerHTML = 'invalid'
+            return false
+        }
+        errorName.innerHTML = ''
+        return true
+    }
+    function validEmail() {
+        const name = document.getElementById('email').value
+        if (name == "") {
+            errorEmail.innerHTML = "enter you email address"
+            return false
+        }
+        if (!name.match(/^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/)) {
+            errorEmail.innerHTML = 'enter a proper email adress'
+            return false
+        }
+        errorEmail.innerHTML = ''
+        return true
+    } 
+	function validateAddress(){
+		const address=document.getElementById('address').value
+		if(address==''){
+			errorAddress.innerHTML='cannot be empty'
+			return false
+		}
+		errorAddress.innerHTML=null
+		return true
+	}
+    function validateNumber(){
+      const name = document.getElementById('mobile').value
+      if (name==""){
+        errorNumber.innerHTML="enter your number"
+       return false 
+      }
+      if(name.length<10){
+        errorNumber.innerHTML="invalid number"
+        return false
+      }
+      errorNumber.innerHTML=null
+      return true
+    }
+	function validatePincode(){
+		const pincode=document.getElementById('pincode').value
+		if(pincode==''){
+			errorpincode.innerHTML='cannot be empty'
+			return false
+		}else if(pincode.length<6){
+			errorpincode.innerHTML='it should be 6 digit'
+			return false
+		}
+		errorpincode.innerHTML=null
+		return true
+	}
+ 
+    function validation() {
+        if (validateName() && validEmail() && validateAddress() && validateNumber() && validatePincode()) {
+            
+         return true
+        }
+        return false
+    }
+	</script>

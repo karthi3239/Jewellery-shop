@@ -1,0 +1,49 @@
+<section>
+  <div class="container" style="margin-top:65px">
+    <table class="table" style="margin-top:65px" id="table_id">
+      <thead>
+        <tr>
+          <th scope="col">No</th>
+          <th scope="col">Coupon Name</th>
+          {{!-- <th scope="col">Description</th>
+          <th scope="col">Price</th> --}}
+          <th scope="col">Discount Percent</th>
+          <th scope="col">Options</th>
+         
+        </tr>
+      </thead>
+      <tbody>
+        {{#each coupon}}
+        <tr>
+          <th scope="row">{{inc @index}}</th>
+          <td>{{this.couponname}}</td>
+          <td>{{this.discountper}}</td>
+          <td>
+            <a href="/admin/edit-coupon/{{this._id}}" class="btn btn-primary">Edit</a>
+            {{#if status}}
+            <a href="/admin/disable-coupon/{{this._id}}" class="badge badge-danger">Disable</a>
+            {{else}}
+            <a href="/admin/activate-coupon/{{this._id}}" class="badge badge-danger">Activate</a>
+            {{/if}}
+          </td>
+         <td>
+           <a href="/admin/coupon-history/{{this._id}}" class="badge badge-danger">Coupon History</a>
+         </td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+{{!--
+<script>
+  $(document).ready(function () {
+    $('#table_id').DataTable();
+  });
+</script> --}}
+
+
+
+
+

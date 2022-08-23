@@ -1,0 +1,49 @@
+<!-- Page Header Start -->
+<div class="container-fluid bg-secondary mb-5">
+  <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 250px">
+    <h1 class="font-weight-semi-bold text-uppercase mb-3">Wallet History</h1>
+    <div class="d-inline-flex">
+      <p class="m-0"><a href="/">Home</a></p>
+      <p class="m-0 px-2">-</p>
+      <p class="m-0">Orders</p>
+    </div>
+  </div>
+</div>
+<!-- Page Header End -->
+
+<div class="container">
+  <div class="row">
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">No</th>
+      <th scope="col">OrderID</th>
+
+      <th scope="col">wallet Amount</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    {{#each order}}
+    <tr>
+      <th scope="row">{{inc @index}}</th>
+
+
+      {{#if this.status}}
+      <td>{{this.orderId}}</td>
+      <td style="color:green">
+        +{{this.walletamount}}
+      </td>
+      {{else}}
+      <td>{{this.orderId}}</td>
+      <td style="color:red">
+        -{{this.returnamount}}
+      </td>
+      {{/if}}
+    </tr>
+
+    {{/each}}
+  </tbody>
+</table>
+</div>   
+</div>

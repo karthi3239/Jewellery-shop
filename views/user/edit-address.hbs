@@ -1,0 +1,45 @@
+<section class="d-flex justify-content-center">
+    <div class="container  m-5 d-flex justify-content-center" style="background-color:rgb(218, 218, 218) ; width: 700px;height: auto;border-radius: 25px;box-shadow: 100px;">
+        <div class="row">
+
+            <div class=" col-md-12">
+                <h2 class="text-center">
+                    Edit Address
+                </h2>
+                <form action="/edit-user-address/{{address._id}}" method="post" style="width: 500px;">
+                 <input type="text" name="userId" class="form-control" value="{{address.userId}}"hidden>
+                    <label for=""> Name</label>
+                    <input type="text" name="name" class="form-control" value="{{address.addressdetails.name}}">
+                    {{!-- <label for="">Last Name</label>
+                    <input type="text" name="LastName" class="form-control" value="{{address.LastName}}"> --}}
+                    <label for="">Mobile</label>
+                    <input type="text" name="mobile" class="form-control" value="{{address.addressdetails.mobile}}">
+                    <label for="">Address</label>
+                    <input type="text" name="address" class="form-control" value="{{address.addressdetails.address}}">
+
+                    <label for="">State</label>
+                    <input type="text" name="state" class="form-control" value="{{address.addressdetails.state}}">
+
+                    <label for="">Pincode</label>
+                    <input type="text" name="pincode" class="form-control" value="{{address.addressdetails.pincode}}">
+                    
+
+                   
+                    
+
+                    
+
+                    <button type="submit" class="btn btn-success my-4">Submit</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+     .btn-success{
+                background-color:  #D19C97;
+                border-color:  #D19C97;
+            }
+</style>
